@@ -1,0 +1,43 @@
+﻿@model vidlyy.ViewModels.RandomViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var ClassName = (Model.Customers.Count > 2 ? "Popular" : null);
+}
+
+@*
+    this is a Random model used to monitor
+*@
+
+<h2>List Of Customers</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text> No one has rented the movie </text>
+}
+else
+{
+<ul>
+    @foreach (var Customer in Model.Customers)
+    {
+        <li>@Customer.Name</li>
+       
+    }
+
+</ul>
+}
+    @*<ul>
+        @foreach (var Movies in Model.Movies)
+        {
+          <li>@Movies.Name</li>
+        }
+
+    </ul>*@
+
+
+
+
+
